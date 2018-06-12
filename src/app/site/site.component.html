@@ -1,0 +1,32 @@
+<div class="list-group-item  flex-column align-items-start"
+     [ngClass]="{
+'list-group-item-danger': site.isSold
+}">
+    <div class="d-flex w-100 justify-content-between">
+        <p class="mb-1"><strong>URL: </strong>{{site.url}}</p>
+        <small>{{site.date}}</small>
+    </div>
+    <p class="mb-1">
+        <strong>LOGIN: </strong>{{site.login}}
+    </p>
+    <p class="mb-1">
+        <strong>PASSWORD: </strong> {{site.pass}}
+    </p>
+    <hr>
+    <div class="text-center" *ngIf="site.image; else elseBlock">
+        <img class="text-center mw-100" src="{{site.image}}" alt="">
+        <ng-template #elseBlock>
+            <img class="text-center w-100" src="https://dummyimage.com/550x300.png/99cccc" alt="">
+        </ng-template>
+
+    </div>
+    <hr>
+    <div>
+        <button (click)="onDelete()" type="button" class="btn btn-danger btn-md w-100 mb-3"><i class="fa fa-minus" aria-hidden="true"></i>
+            Delete
+        </button>
+        <button (click)="onBuy()" [disabled]='site.isSold' type="button" class="w-100 btn btn-success btn-md"><i class="fa fa-plus" aria-hidden="true"></i>
+            Buy
+        </button>
+    </div>
+</div>

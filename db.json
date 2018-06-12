@@ -1,0 +1,13 @@
+{
+  "sites": [
+    {
+      "url": "test",
+      "date": "12.06.18",
+      "login": "test",
+      "pass": "test",
+      "image": "test",
+      "isSold": false,
+      "id": 1
+    }
+  ]
+}
